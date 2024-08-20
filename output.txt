@@ -1,0 +1,74 @@
+Station_Name =  Shahrebabak
+Station_ID =  KEKS
+Station_Number =  40849
+
+Date_Year =  2024
+Date_Month =  8
+Date_Day =  23
+Time_Hour =  6
+
+Ir =  1
+Ix =  2
+
+Wind_Direction =  210
+Wind_Speed =  5
+Visibility =  15000
+
+Cloud_N =  7
+
+Cloud1 =  TR
+Cloud_Name1 =  9
+Cloud_Type1 =  3
+Cloud_H1 =  35
+
+Cloud2 =  1
+Cloud_Name2 =  8
+Cloud_Type2 =  4
+Cloud_H2 =  40
+
+Cloud4 =  8
+Cloud_Name4 =  4
+Cloud_Type4 =  7
+Cloud_H4 =  60
+
+B_Pressure =  814.900000
+B_Temp =  34.000000
+
+QFE =  808.5
+
+QNH =  1009.696405
+
+QFF =  988.888053
+
+H850 =  1378.590894
+
+Pr_Tendency =  7
+Pr_Change =  0.500000
+
+Dry_Temp =  35.800000
+Wet_Temp =  15.800000
+
+Dew_Point_Temp =  -2.705863
+
+VP =  5.014163
+RH =  9
+
+Rain_6h =  0.0
+Rain_Period_6h =  1
+
+Rain_3h =  0.0
+Rain_24h =  0.0
+
+Ground_Status =  0
+Ground_Temp =  19.2
+
+Evaporation =  /
+Evap_Device =  1
+
+Synop_Code = 
+ZCZC
+SMIR40 KEKS 230600
+AAXX 23061
+40849 12665 72105 10358 21027 38085 49889 57005 60001 8137/ 333 30019 5///1 70000 81840 88460 80935 555 10158 29009=
+NNNN
+
