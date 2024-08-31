@@ -8,7 +8,7 @@
 * Kazem Rezazadeh (kazem.rezazadeh@ipm.ir)
 *
 * Purpose:
-* Calculation of meteorological parameters and generation of the Synop code
+* CALCulation of meteorological parameters and generation of the Synop code
 * 
 * Usage:
 * First enter the input parameters in the "input.txt" file. Then execute the 
@@ -41,7 +41,7 @@ int main()
     const double g = 9.7803267715;
     const double R = 287.052874;
     const double R_gas = 8.31446261815324;
-    const double alpha_Hg = 0.0002328204008876278; 
+    const double alpha_Hg = 0.00024; 
     const double A_Tdew = 6.116441;
     const double m_Tdew = 7.591386;
     const double Tn_Tdew = 240.7263;
@@ -253,7 +253,7 @@ int main()
 
     //
 
-    
+
     
     // outputFile = fopen("output.txt", "w");
 
@@ -337,6 +337,11 @@ int main()
         vv_str = to_string(vv);        
     }
 
+    if(Cloud_N_str == "0")
+    {
+        Cloud_H_str = "9";
+    }
+
     IRIXhvv_str = to_string(Ir) +  to_string(Ix) + Cloud_H_str + vv_str;
 
     Synop_Code = Synop_Code + " " + IRIXhvv_str;
@@ -344,6 +349,11 @@ int main()
     // nddff = Cloud_N*10000 + (Wind_Direction/10)*100 + Wind_Speed;
 
     // cout << "nddff = " << nddff << endl;
+
+    if(Cloud_N_str == "TR")
+    {
+        Cloud_N_str = "1";
+    }
 
     if((Wind_Direction/10) < 10)
     {
@@ -382,7 +392,7 @@ int main()
 
     Synop_Code = Synop_Code + " " + to_string(OneSnTTT);
 
-    if(QFE_str != "calc")
+    if(QFE_str != "CALC")
     {
         QFE = stod(QFE_str);
     }
@@ -391,7 +401,7 @@ int main()
         B_Pressure = stod(read_data("B_Pressure"));
         B_Temp = stod(read_data("B_Temp"));
 
-        // Calculation of QFE
+        // CALCulation of QFE
         // Correction due to the linear heat expansion of mercury (Hg)
 
         QFE = B_Pressure/(1 + alpha_Hg*B_Temp);
@@ -403,7 +413,7 @@ int main()
 
     // cout << "ThreeP0P0P0P0 = " << ThreeP0P0P0P0 << endl;
 
-    // Calculation of Tdew, RH
+    // CALCulation of Tdew, RH
     // Using the equations from: https://www.metpod.co.uk/calculators/dew-point/
 
     Tdry = Dry_Temp;
@@ -463,13 +473,20 @@ int main()
 
     // cout << "QFF = " << round(QFF*10.0)/10.0 << endl;
 
-    FourPPPP = 40000 + int(round(QFF*10.0));
-
+    if(round(QFF*10.0)/10.0 < 1000)
+    {
+        FourPPPP = 40000 + int(round(QFF*10.0));
+    }
+    else if (round(QFF*10.0)/10.0 >= 1000)
+    {
+        FourPPPP = 40000 + (int(round(QFF*10.0)) % 1000);
+    }
+    
     // cout << "FourPPPP = " << FourPPPP << endl;
 
     Synop_Code = Synop_Code + " " + to_string(FourPPPP);
     
-    if(Pr_Change_str != "calc")
+    if(Pr_Change_str != "CALC")
     {
         Pr_Change = stod(Pr_Change_str);
     }
@@ -1103,9 +1120,11 @@ int main()
     fprintf(outputFile, "%s %i\n", "Ix = ", Ix);
     fprintf(outputFile, "\n");
 
+    fprintf(outputFile, "%s %i\n", "Visibility = ", Visibility);
+    fprintf(outputFile, "\n");
+
     fprintf(outputFile, "%s %i\n", "Wind_Direction = ", Wind_Direction);
     fprintf(outputFile, "%s %i\n", "Wind_Speed = ", Wind_Speed);
-    fprintf(outputFile, "%s %i\n", "Visibility = ", Visibility);
     fprintf(outputFile, "\n");
 
     if((Ix == 1) or (Visibility < 10000))
@@ -1117,6 +1136,7 @@ int main()
     }
 
     fprintf(outputFile, "%s %s\n", "Cloud_N = ", Cloud_N_str.c_str());
+    fprintf(outputFile, "%s %s\n", "Cloud_H = ", Cloud_H_str.c_str());
     fprintf(outputFile, "\n");
 
     if((Cloud1_str != "/") and (Cloud1_str != "0"))
@@ -1164,41 +1184,41 @@ int main()
         fprintf(outputFile, "\n");
     }
 
-    if(QFE_str != "calc")
+    if(QFE_str != "CALC")
     {
         fprintf(outputFile, "%s %.1f\n", "QFE = ", QFE);
         fprintf(outputFile, "\n");
     }
     else
     {
-        fprintf(outputFile, "%s %f\n", "B_Pressure = ", B_Pressure);
-        fprintf(outputFile, "%s %f\n", "B_Temp = ", B_Temp);
+        fprintf(outputFile, "%s %.1f\n", "B_Pressure = ", B_Pressure);
+        fprintf(outputFile, "%s %.1f\n", "B_Temp = ", B_Temp);
         fprintf(outputFile, "\n");
         fprintf(outputFile, "%s %.1f\n", "QFE = ", QFE);
         fprintf(outputFile, "\n");
     }
 
-    fprintf(outputFile, "%s %f\n", "QNH = ", QNH);
+    fprintf(outputFile, "%s %.1f\n", "QNH = ", QNH);
     fprintf(outputFile, "\n");
 
-    fprintf(outputFile, "%s %f\n", "QFF = ", QFF);
+    fprintf(outputFile, "%s %.1f\n", "QFF = ", QFF);
     fprintf(outputFile, "\n");
 
-    fprintf(outputFile, "%s %f\n", "H850 = ", H850);
+    fprintf(outputFile, "%s %.1f\n", "H850 = ", H850);
     fprintf(outputFile, "\n");
 
     fprintf(outputFile, "%s %i\n", "Pr_Tendency = ", Pr_Tendency);
-    fprintf(outputFile, "%s %f\n", "Pr_Change = ", Pr_Change);
+    fprintf(outputFile, "%s %.1f\n", "Pr_Change = ", Pr_Change);
     fprintf(outputFile, "\n");
 
-    fprintf(outputFile, "%s %f\n", "Dry_Temp = ", Dry_Temp);
-    fprintf(outputFile, "%s %f\n", "Wet_Temp = ", Wet_Temp);
+    fprintf(outputFile, "%s %.1f\n", "Dry_Temp = ", Dry_Temp);
+    fprintf(outputFile, "%s %.1f\n", "Wet_Temp = ", Wet_Temp);
     fprintf(outputFile, "\n");
 
-    fprintf(outputFile, "%s %f\n", "Dew_Point_Temp = ", Tdew);
+    fprintf(outputFile, "%s %.1f\n", "Dew_Point_Temp = ", Tdew);
     fprintf(outputFile, "\n");
 
-    fprintf(outputFile, "%s %f\n", "VP = ", Pw);
+    fprintf(outputFile, "%s %.1f\n", "VP = ", Pw);
     fprintf(outputFile, "%s %i\n", "RH = ", int(round(RH)));
     fprintf(outputFile, "\n");
 

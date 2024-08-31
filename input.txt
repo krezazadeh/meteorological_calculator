@@ -11,58 +11,61 @@ Elevation = 1834.1
 
 Date_Year = 2024
 Date_Month = 08
-Date_Day = 23
-Time_Hour = 6
+Date_Day = 31
+Time_Hour = 9
 
 # Type of report
 
-Ir = 1
+Ir = 4
 Ix = 2
 
-Cloud_N = 7
-Cloud_H = 6
+# Cloud_N is an integer, or it can be set as TR.
+Cloud_N = 0
+
+# Cloud_H is an integer, or it can be set as / if its value is unknown.
+Cloud_H = 0
 
 Visibility = 15000
 # Min_Vis_Dir = 
 
-Wind_Direction = 210
-Wind_Speed = 5
+Wind_Direction = 250
+Wind_Speed = 03
 
-Dry_Temp = 35.8
-Wet_Temp = 15.8
+Dry_Temp = 33.4
+Wet_Temp = 15.0
 
-T_12 = 25.0
+T_12 = 20.0
 
-# You can enter the value of QFE or set it as calc to calculate it.
+# You can enter the value of QFE or set it as CALC to calculate it.
 
-QFE = calc
+QFE = CALC
 
-# If QFE is set as calc, you should give the values of B_Pressure and B_Temp.
+# If QFE is set as CALC, you should give the values of B_Pressure and B_Temp.
 
-B_Pressure = 814.9
-B_Temp = 34.0
+B_Pressure = 818.1
+B_Temp = 30.0
 
-Pr_Tendency = 7
+Pr_Tendency = 8
 
-# Yo can enter the value of Pr_Change or set it as calc to calculate it.
+# Yo can enter the value of Pr_Change or set it as CALC to calculate it.
 
-Pr_Change = calc
+Pr_Change = CALC
 
-# If Pr_Change is set as calc, you should give the valu of QFE_180.
+# If Pr_Change is set as CALC, you should give the valu of QFE_180.
 
-QFE_180 = 808.0
+QFE_180 = 813.7
 
-// Rain, SM
+# Rain, SM
 
 Rain_6h = 0
 Rain_Period_6h = 1
 
-// Rain, SM, SI
+# Rain, SM, SI
 
 Rain_3h = 0
 Rain_24h = 0
 
-// Rain, SN
+# Rain, SN
 
 Rain_1h = 0
 Rain_Period_1h = 5
@@ -85,15 +88,15 @@ W2 = 0
 
 # Low clouds
 
-Cloud1 = TR
-Cloud_Name1 = 9
-Cloud_Type1 = 3
-Cloud_H1 = 35
+Cloud1 = 0
+Cloud_Name1 = 0
+Cloud_Type1 = 0
+Cloud_H1 = 0
 
-Cloud2 = 1
-Cloud_Name2 = 8
-Cloud_Type2 = 4
-Cloud_H2 = 40
+Cloud2 = 0
+Cloud_Name2 = 0
+Cloud_Type2 = 0
+Cloud_H2 = 0
 
 Cloud3 = 0
 Cloud_Name3 = 0
@@ -102,21 +105,21 @@ Cloud_H3 = 0
 
 # Middle cloud
 
-Cloud4 = 8
-Cloud_Name4 = 4
-Cloud_Type4 = 7
-Cloud_H4 = 60
+Cloud4 = 0
+Cloud_Name4 = 0
+Cloud_Type4 = 0
+Cloud_H4 = 0
 
 # High cloud
 
-Cloud5 = 7
-Cloud_Name5 = 2
-Cloud_Type5 = 6
-Cloud_H5 = 70
+Cloud5 = 0
+Cloud_Name5 = 0
+Cloud_Type5 = 0
+Cloud_H5 = 0
 
-# Nhs is an integer, or set it as / if its value is unknown.
+# Nhs is an integer, or it can be set as TR. If its value is unknown, set it as /.
 
-Nhs = 1
+Nhs = 0
 
 # SM or SI
 
@@ -126,23 +129,23 @@ Rain_24h = 0.0
 # SM06
 
 Ground_Status = 0
-Ground_Temp = 19.2
+Ground_Temp = 12.0
 
 # You can enter the Evaporation value or set it as / if its value is unknown.
 
-Evaporation = /
+Evaporation = 15.0
 Evap_Device = 1
 
 # SI03, SI15
 
-Min_Temp = 23.2
-Max_Temp = 37.0
+Min_Temp = 15.0
+Max_Temp = 29.0
 
 # SI03, SI09, SI15
 
-Soil_T5 = 27.4
-Soil_T10 = 31.4
-Soil_T20 = 34.4
-Soil_T30 = 34.8
-Soil_T50 = 33.2
-Soil_T100 = 30.8
+Soil_T5 = 42.6
+Soil_T10 = 33.6
+Soil_T20 = 30.2
+Soil_T30 = 31.0
+Soil_T50 = 31.2
+Soil_T100 = 30.2
