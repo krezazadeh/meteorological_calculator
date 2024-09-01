@@ -10,31 +10,31 @@ Elevation = 1834.1
 # Date and Time
 
 Date_Year = 2024
-Date_Month = 08
-Date_Day = 31
-Time_Hour = 9
+Date_Month = 09
+Date_Day = 01
+Time_Hour = 05
 
 # Type of report
 
-Ir = 4
+Ir = 2
 Ix = 2
 
 # Cloud_N is an integer, or it can be set as TR.
 Cloud_N = 0
 
 # Cloud_H is an integer, or it can be set as / if its value is unknown.
-Cloud_H = 0
+Cloud_H = 9
 
 Visibility = 15000
 # Min_Vis_Dir = 
 
-Wind_Direction = 250
-Wind_Speed = 03
+Wind_Direction = 0
+Wind_Speed = 0
 
-Dry_Temp = 33.4
-Wet_Temp = 15.0
+Dry_Temp = 26.0
+Wet_Temp = 12.0
 
-T_12 = 20.0
+T_12 = 26.0
 
 # You can enter the value of QFE or set it as CALC to calculate it.
 
@@ -42,10 +42,10 @@ QFE = CALC
 
 # If QFE is set as CALC, you should give the values of B_Pressure and B_Temp.
 
-B_Pressure = 818.1
-B_Temp = 30.0
+B_Pressure = 820.3
+B_Temp = 27.0
 
-Pr_Tendency = 8
+Pr_Tendency = 2
 
 # Yo can enter the value of Pr_Change or set it as CALC to calculate it.
 
@@ -53,7 +53,7 @@ Pr_Change = CALC
 
 # If Pr_Change is set as CALC, you should give the valu of QFE_180.
 
-QFE_180 = 813.7
+QFE_180 = 814.6
 
 # Rain, SM
 
@@ -138,14 +138,14 @@ Evap_Device = 1
 
 # SI03, SI15
 
-Min_Temp = 15.0
+Min_Temp = 14.2
 Max_Temp = 29.0
 
 # SI03, SI09, SI15
 
-Soil_T5 = 42.6
-Soil_T10 = 33.6
-Soil_T20 = 30.2
-Soil_T30 = 31.0
+Soil_T5 = 20.2
+Soil_T10 = 26.0
+Soil_T20 = 30.4
+Soil_T30 = 31.4
 Soil_T50 = 31.2
 Soil_T100 = 30.2

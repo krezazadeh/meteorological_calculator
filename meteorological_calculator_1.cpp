@@ -1120,11 +1120,11 @@ int main()
     fprintf(outputFile, "%s %i\n", "Ix = ", Ix);
     fprintf(outputFile, "\n");
 
-    fprintf(outputFile, "%s %i\n", "Visibility = ", Visibility);
-    fprintf(outputFile, "\n");
-
     fprintf(outputFile, "%s %i\n", "Wind_Direction = ", Wind_Direction);
     fprintf(outputFile, "%s %i\n", "Wind_Speed = ", Wind_Speed);
+    fprintf(outputFile, "\n");
+
+    fprintf(outputFile, "%s %i\n", "Visibility = ", Visibility);
     fprintf(outputFile, "\n");
 
     if((Ix == 1) or (Visibility < 10000))

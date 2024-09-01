@@ -3,57 +3,50 @@ Station_ID =  KEKS
 Station_Number =  40849
 
 Date_Year =  2024
-Date_Month =  8
-Date_Day =  31
-Time_Hour =  9
+Date_Month =  9
+Date_Day =  1
+Time_Hour =  5
 
-Ir =  4
+Ir =  2
 Ix =  2
 
-Visibility =  15000
+Wind_Direction =  0
+Wind_Speed =  0
 
-Wind_Direction =  250
-Wind_Speed =  3
+Visibility =  15000
 
 Cloud_N =  0
 Cloud_H =  9
 
-B_Pressure =  818.1
-B_Temp =  30.0
+B_Pressure =  820.3
+B_Temp =  27.0
 
-QFE =  812.3
+QFE =  815.0
 
-QNH =  1014.2
+QNH =  1017.5
 
-QFF =  995.9
+QFF =  999.8
 
-H850 =  1424.1
+H850 =  1464.1
 
-Pr_Tendency =  8
-Pr_Change =  1.4
+Pr_Tendency =  2
+Pr_Change =  0.4
 
-Dry_Temp =  33.4
-Wet_Temp =  15.0
+Dry_Temp =  26.0
+Wet_Temp =  12.0
 
-Dew_Point_Temp =  -2.5
+Dew_Point_Temp =  -3.0
 
-VP =  5.1
-RH =  10
+VP =  4.9
+RH =  15
 
-Rain_3h =  0.0
-Rain_24h =  0.0
-
-Soil_T5 =  42.6
-Soil_T10 =  33.6
-Soil_T20 =  30.2
-Soil_T30 =  31.0
-Soil_T50 =  31.2
-Soil_T100 =  30.2
+Rain_1h =  0.0
+Rain_Period_1h =  5
 
 Synop_Code = 
 ZCZC
-SIIR41 KEKS 310900
-AAXX 31091
-40849 42965 02503 10334 21025 38123 49959 58014 333 70000 555 10150 29010 66666 00426 10336 20302 30310 50312 90302=
+SNIR42 KEKS 010500
+AAXX 01051
+40849 22965 00000 10260 21030 38150 49998 52004 333 60005 555 10120 29015=
 NNNN
 
